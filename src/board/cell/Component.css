@@ -1,0 +1,20 @@
+@value margin: 10px;
+@value dimension: 100px;
+
+@value surfaceArea: calc( dimension + margin*2 );
+
+.default {
+  float:left;
+  width: dimension;
+  height: dimension;
+  line-height:dimension;
+  text-align:center;
+  margin: margin;
+  border-radius: 10px;
+  border:solid;
+  border-width:0 0 5px 0;
+  box-sizing:border-box;
+  background : #f1f1f1;
+  border-color: #ccc;
+}
+
