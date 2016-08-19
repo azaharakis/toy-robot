@@ -1,0 +1,19 @@
+@value dimension: 70px;
+
+.default {
+  position:absolute;
+  background: blue;
+  border-bottom:solid 5px #7a85ff;
+  text-shadow: 0 1px 1px #7a85ff;
+  color: #fff;
+  text-align:center;
+  font-size:10px;
+  font-weight: bold;
+  font-family:Helvetica;
+  width: dimension;
+  height: dimension;
+  line-height:calc(dimension - 5px);
+  text-align:center;
+  border-radius: 50%;
+  box-sizing:border-box;
+}
