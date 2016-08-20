@@ -5,7 +5,7 @@ export default ({position}) => {
     const { x, y } = position;
 
     return (
-        <div>
+        <div className={styles.default}>
             Robot
         </div>
     );
