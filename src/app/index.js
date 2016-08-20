@@ -7,18 +7,18 @@ import Robot, { model as robot } from '../robot';
 export default class App extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            position: {x: 0, y: 0},
-        };
+        this.robots = [
+            robot({x:1, y:0}),
+        ];
 
-        this.robot = robot(this.state.position);
         this.board = board();
+        this.state = { robots: this.robots.map( i => i.display() ) }
     }
 
     render() {
         return (
             <div className={styles}>
-                <Robot {...this.state} />
+                {this.state.robots.map( (display, k) => <Robot key={k} {...display} />)}
                 <Board board={this.board}/>
             </div>
         );

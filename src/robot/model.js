@@ -11,6 +11,12 @@ export default ({x, y}) => {
                 x: currentPosition.x + x,
                 y: currentPosition.y + y
             }
+        },
+
+        display() {
+            return {
+                position: currentPosition,
+            }
         }
     };
 };
