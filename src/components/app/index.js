@@ -10,9 +10,19 @@ export default class App extends Component {
         this.robots = [
             robot({x:1, y:0}),
         ];
-
         this.board = board();
+        this.handleKeyDown = this.handleKeyDown.bind(this);
+
+        document.body.addEventListener('keydown', this.handleKeyDown);
         this.state = { robots: this.robots.map( i => i.display() ) }
+    }
+
+    handleKeyDown({direction, display}) {
+        console.log(`in here`);
+    }
+
+    componentWillUnmount() {
+        document.body.removeEventListener('keydown', this.handleKeyDown);
     }
 
     render() {
