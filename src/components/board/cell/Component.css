@@ -3,7 +3,7 @@
 
 @value surfaceArea: calc( dimension + margin*2 );
 
-.default {
+.common {
   float:left;
   width: dimension;
   height: dimension;
@@ -14,7 +14,16 @@
   border:solid;
   border-width:0 0 5px 0;
   box-sizing:border-box;
+}
+
+.default {
+  composes: common;
   background : #f1f1f1;
   border-color: #ccc;
 }
 
+.null {
+  composes: common;
+  background : red;
+  border-color: darkred;
+}

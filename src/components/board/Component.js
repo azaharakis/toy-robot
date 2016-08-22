@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import styles from './Component.css';
-import Cell from './cell';
 
-const renderCell = (CELL, i) => <Cell key={i}/>; 
+const renderCell = (Cell, i) => <Cell key={i}/>;
 
 const renderRow = (r, i) => (
     <div key={i} className={styles.row}>

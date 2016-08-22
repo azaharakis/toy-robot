@@ -1,18 +1,18 @@
-const CELL = true;
+import Cell, { Empty }  from './cell';
 
 export default () => {
     let surface = [
-        [CELL, CELL, CELL, CELL, CELL],
-        [CELL, CELL, CELL, CELL, CELL],
-        [CELL, CELL, CELL, CELL, CELL],
-        [CELL, CELL, CELL, CELL, CELL],
-        [CELL, CELL, CELL, CELL, CELL]
+        [Empty, Cell, Cell, Cell, Cell],
+        [Cell, Cell, Cell, Cell, Cell],
+        [Cell, Cell, Cell, Cell, Cell],
+        [Cell, Cell, Cell, Cell, Cell],
+        [Cell, Cell, Cell, Cell, Cell]
     ];
 
     return {
         surface,
         isValid ({x, y}) {
-            const isValidCell = () => surface[y][x];
+            const isValidCell = () => surface[y][x] !== Empty;
             const isWithinXSurface = () => x >= 0 && x < surface[y].length;
             const isWithinYSurface = () => y >= 0 &&  y < surface.length;
 
