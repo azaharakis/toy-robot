@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { styles } from './Component.css';
 import Board, { model as board } from '../board';
 import Robot, { model as robot } from '../robot';
-
+import { ifInputMatchesAValidDirection } from '../../directions';
 
 export default class App extends Component {
     constructor(props) {
@@ -11,14 +11,14 @@ export default class App extends Component {
             robot({x:1, y:0}),
         ];
         this.board = board();
-        this.handleKeyDown = this.handleKeyDown.bind(this);
+        this.handleKeyDown = ifInputMatchesAValidDirection(this.handleKeyDown.bind(this));
 
         document.body.addEventListener('keydown', this.handleKeyDown);
         this.state = { robots: this.robots.map( i => i.display() ) }
     }
 
     handleKeyDown({direction, display}) {
-        console.log(`in here`);
+        console.log(`in here ${direction}`);
     }
 
     componentWillUnmount() {
