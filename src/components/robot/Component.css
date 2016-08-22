@@ -1,6 +1,11 @@
 @value dimension: 70px;
 
+.animate {
+  transition: all 0.3s ease-in-out;
+}
+
 .default {
+  composes:animate;
   position:absolute;
   background: blue;
   border-bottom:solid 5px #7a85ff;
@@ -17,3 +22,4 @@
   border-radius: 50%;
   box-sizing:border-box;
 }
+
