@@ -10,6 +10,7 @@ export default class App extends Component {
         this.robots = [
             robot({x:1, y:0}),
         ];
+        this.setCurrentRobot();
         this.board = board();
         this.handleKeyDown = ifInputMatchesAValidDirection(this.handleKeyDown.bind(this));
 
@@ -18,7 +19,20 @@ export default class App extends Component {
     }
 
     handleKeyDown({direction, display}) {
-        console.log(`in here ${direction}`);
+        const robot = this.currentRobot;
+
+        const potentialPosition = robot.queryPosition(direction());
+        const isRobotAbleToMove = this.board.isValid(potentialPosition);
+        if (isRobotAbleToMove) {
+            robot.setPosition(potentialPosition);
+        }
+
+        this.setState({robots: this.robots.map( i => i.display() )});
+
+    }
+
+    setCurrentRobot(index = 0) {
+        this.currentRobot = this.robots[index];
     }
 
     componentWillUnmount() {
