@@ -20,11 +20,14 @@ export default class App extends Component {
 
     handleKeyDown({direction, display}) {
         const robot = this.currentRobot;
-
         const potentialPosition = robot.queryPosition(direction());
         const isRobotAbleToMove = this.board.isValid(potentialPosition);
+
         if (isRobotAbleToMove) {
+            robot.clearMessage();
             robot.setPosition(potentialPosition);
+        } else {
+            robot.messages.invalidLocation(display);
         }
 
         this.setState({robots: this.robots.map( i => i.display() )});

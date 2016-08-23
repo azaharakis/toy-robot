@@ -23,3 +23,25 @@
   box-sizing:border-box;
 }
 
+.speechBubble {
+  composes:animate;
+  text-shadow: none;
+  @value height: 60px;
+  background:#fff;
+  color:#343434;
+  font-weight:bold;
+  position: absolute;
+  top: calc(- dimension);
+  left: calc(dimension/2);
+  min-width:200px;
+  border-radius: 10px;
+  opacity: 0;
+  line-height: height;
+  height: height;
+  box-shadow:0px 2px 0px rgba(0,0,0,.2);
+}
+
+.show{
+  opacity:1;
+}
+
